@@ -1,0 +1,37 @@
+<div class="filters">
+    <mat-form-field>
+        <mat-label>Sort</mat-label>
+        <mat-select panelClass="sort-select" [(ngModel)]="sort" (selectionChange)="searchGames(sort)">
+            <mat-option value="name">Name</mat-option>
+            <mat-option value="released">Released</mat-option>
+            <mat-option value="added">Added</mat-option>
+            <mat-option value="created">Created</mat-option>
+            <mat-option value="updated">Updated</mat-option>
+            <mat-option value="rating">Rating</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let game of games">
+            <div class="col-md-4 ml-1 mr-1 mt-3 mb-1">
+                <div class="card" style="height: 25rem;">
+                    <img *ngIf="game.background_image" class="card-img-top" src="{{game.background_image}}"
+                        alt="Card image cap" height="200">
+                    <div class="card-body">
+                        <h2 class="card-title">{{game.name}}</h2>
+                        <p class="card-text">Available on these platforms:</p>
+                        <div class="d-flex">
+                            <ng-container *ngFor="let gamePlatform of game.parent_platforms">
+                                <img class="m-1"
+                                    src="assets/platform-logos/{{gamePlatform.platform.name.toLowerCase()}}.svg"
+                                    width="20" height="20" alt="{{gamePlatform.platform.name}}" />
+                            </ng-container>
+                        </div>
+                        <a (click)="openGame(game.id)" class="btn btn-primary mt-2">Know more!</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

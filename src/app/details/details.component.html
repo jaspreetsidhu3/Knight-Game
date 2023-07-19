@@ -1,0 +1,12 @@
+<div class="container m-5">
+    <div class="row">
+        <img src="{{ game.background_image }}" alt="game image" />
+        <h1 class="mt-5">{{game.name}}</h1>
+        <h3 class="m-2">Released: {{game.released}}</h3>
+        <p class="m-2">{{game.description}}</p>
+        <div class="m-2">
+            <p>Rating: {{game.metacritic}} /100</p>
+        </div>
+        <a href="{{game.website}}" target="_blank">Redirect to game page</a>
+    </div>
+</div>

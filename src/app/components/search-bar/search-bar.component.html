@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">Knight</a>
+    <div id="navbarSupportedContent">
+        <form class="form-inline d-flex my-2 my-lg-0" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <input class="form-control mr-sm-2" name="search" ngModel type="search" placeholder="Search games"
+                aria-label="Search">
+            <button class="btn btn-outline-primary btn-sm my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
